@@ -1,0 +1,27 @@
+-- Create a grocery store database --
+
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, cost INTEGER, price INTEGER, quantity INTEGER);
+
+INSERT INTO inventory VALUES (1, "Straw", 1.25, 5.00, 41);
+INSERT INTO inventory VALUES (2, "Alfalfa", 4.50, 10.00, 26);
+INSERT INTO inventory VALUES (3, "Penicillin", 8.00, 18.00, 13);
+INSERT INTO inventory VALUES (4, "2-4D", 28.00, 52.00, 73);
+INSERT INTO inventory VALUES (5, "RoundUp", 14.50, 30.00, 19);
+INSERT INTO inventory VALUES (6, "Timothy", 3.50, 7.00, 84);
+INSERT INTO inventory VALUES (7, "Twine", 10.00, 20.00, 112);
+INSERT INTO inventory VALUES (8, "Fertilizer", 5.00, 10.00, 3);
+INSERT INTO inventory VALUES (9, "Sprayer", 110.00, 250.00, 1);
+INSERT INTO inventory VALUES (10, "Hat", 1.00, 2.00, 41);
+INSERT INTO inventory VALUES (11, "Shirt", 6.00, 12.00, 5);
+INSERT INTO inventory VALUES (12, "Pants", 4.00, 8.00, 56);
+INSERT INTO inventory VALUES (13, "Gloves", 3.00, 6.00, 75);
+INSERT INTO inventory VALUES (14, "Seeds", 0.50, 1.00, 538);
+INSERT INTO inventory VALUES (15, "Tractor", 3000.00, 8000.00, 1);
+
+-- Display the database ordered by price --
+
+SELECT * FROM inventory ORDER BY price
+
+-- Display the database ordered by cost --
+
+SELECT * FROM inventory ORDER BY cost
