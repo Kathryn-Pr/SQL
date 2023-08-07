@@ -1,0 +1,79 @@
+-- Create a table with information about famous characters --
+
+
+CREATE TABLE famous_people (
+    id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    village_sector TEXT);
+    
+INSERT INTO famous_people VALUES(1, 'Mother', 'Miranda', 'Stronghold');
+INSERT INTO famous_people VALUES(2, 'Alcina', 'Dimitrescu', 'Castle Dimitrescu');
+INSERT INTO famous_people VALUES(3, 'Salvatore', 'Moreau', 'Reservoir');
+INSERT INTO famous_people VALUES(4, 'Donna', 'Beneviento', 'Misty Valley');
+INSERT INTO famous_people VALUES(5, 'Karl', 'Heisenberg', 'Factory');
+INSERT INTO famous_people VALUES(6, 'Bela', 'Dimitrescu', 'Castle Dimitrescu');
+INSERT INTO famous_people VALUES(7, 'Cassandra', 'Dimitrescu', 'Castle Dimitrescu');
+INSERT INTO famous_people VALUES(8, 'Daniela', 'Dimitrescu', 'Castle Dimitrescu');
+INSERT INTO famous_people VALUES(9, 'Angie', 'Beneviento', 'Misty Valley');
+
+SELECT * FROM famous_people;
+
+-- Create a second table to add information about what they do --
+
+CREATE TABLE hobbies(
+    id INTEGER PRIMARY KEY,
+    hobby1 TEXT,
+    hobby2 TEXT);
+    
+INSERT INTO hobbies VALUES(1, 'church', 'mycology');
+INSERT INTO hobbies VALUES(2, 'vinting', 'music');
+INSERT INTO hobbies VALUES(3, 'televison', 'eating cheese');
+INSERT INTO hobbies VALUES(4, 'doll making', 'reading');
+INSERT INTO hobbies VALUES(5, 'tinkering', 'pranking');
+INSERT INTO hobbies VALUES(6, 'hunting', 'music');
+INSERT INTO hobbies VALUES(7, 'hunting', 'blacksmithing');
+INSERT INTO hobbies VALUES(8, 'hunting', 'reading');
+INSERT INTO hobbies VALUES(9, 'climbing trees', 'pranking');
+
+SELECT * FROM hobbies;
+
+-- Create a third table with essential information --
+
+CREATE TABLE abilities(
+    id INTEGER PRIMARY KEY,
+    ability1 TEXT,
+    ability2 TEXT,
+    weakness TEXT);
+    
+INSERT INTO abilities VALUES(1, 'shape shifting', 'mind control', 'fire');
+INSERT INTO abilities VALUES(2, 'claws', 'mama bear', 'dagger of deaths flowers');
+INSERT INTO abilities VALUES(3, 'swimming', 'acid rain', 'mines');
+INSERT INTO abilities VALUES(4, 'hallucinations', 'puzzles', 'scissors');
+INSERT INTO abilities VALUES(5, 'electromagnetic field', 'metal bending', 'water');
+INSERT INTO abilities VALUES(6, 'swarm', 'wit', 'cold');
+INSERT INTO abilities VALUES(7, 'swarm', 'swordsmanship', 'cold');
+INSERT INTO abilities VALUES(8, 'swarm', 'agility', 'cold');
+INSERT INTO abilities VALUES(9, 'biting', 'hiding', 'scissors');
+
+SELECT * FROM abilities;
+
+-- Write queries to JOIN the tables --
+
+- Names and hobbies -
+
+SELECT f.id, f.first_name, f.last_name, h.hobby1, h.hobby2
+FROM famous_people f
+JOIN hobbies h
+ON f.id = h.id;
+
+- Names, hobbies, strengths, and weaknesses -
+
+SELECT f.id, f.first_name, h.hobby1, a.ability1, a.weakness
+FROM famous_people f
+JOIN hobbies h
+ON f.id = h.id
+JOIN abilities a
+ON f.id = a.id;
+
+
