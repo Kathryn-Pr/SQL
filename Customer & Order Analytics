@@ -1,3 +1,7 @@
+#In this SQL, I'm querying a database with multiple tables in it to quantify statistics about customer and order data. 
+
+
+
 SELECT * FROM BIT_DB.JanSales LIMIT 20
 
 
@@ -64,9 +68,3 @@ AND length(orderID) = 6
 AND orderID <> 'Order ID'
 
 
-
-
-
-/*
-WHERE length(order_id) = 6
-AND order_id <> 'Order ID'
