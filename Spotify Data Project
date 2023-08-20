@@ -29,6 +29,8 @@ time_signature integer NOT NULL )
 
 -- # Next, I explored the data using the following SQL. --
 
+SELECT * FROM Spotifydata
+
 -- # First I determined the who the top ten artists are by popularity. --
 SELECT track_name, artist_name, popularity FROM Spotifydata
 ORDER BY popularity DESC
